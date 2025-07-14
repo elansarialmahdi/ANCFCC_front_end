@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="header">
+    <div class="logo-section">
+      <img src="ancfcc-logo.png" alt="ANCFCC Logo" class="logo">
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">1</div>
+    <div class="step-line"></div>
+    <div class="step active">2</div>
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit()" #confirmationForm="ngForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="conservation">Conservation foncière :</label>
+          <select id="conservation" name="conservation" [(ngModel)]="formData.conservation" required>
+            <option value="">--choix--</option>
+            <option value="rabat">Rabat</option>
+            <option value="casablanca">Casablanca</option>
+            <option value="fes">Fès</option>
+            <option value="marrakech">Marrakech</option>
+            <option value="agadir">Agadir</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="numeroTitre">N° du titre :</label>
+          <input type="text" id="numeroTitre" name="numeroTitre" [(ngModel)]="formData.numeroTitre" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="indice">Indice :</label>
+          <select id="indice" name="indice" [(ngModel)]="formData.indice" required>
+            <option value="">----</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="indiceSpecial">Indice spécial :</label>
+          <select id="indiceSpecial" name="indiceSpecial" [(ngModel)]="formData.indiceSpecial">
+            <option value="">----</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="confirmation-section">
+        <h3>Confirmation :</h3>
+        <div class="verification-row">
+          <label for="captchaInput">Veuillez saisir le code visible sur l'image (*) :</label>
+          <div class="captcha-row">
+            <input type="text" id="captchaInput" name="captchaInput" [(ngModel)]="formData.captchaInput" required>
+            <div class="captcha-display">-X59mn</div>
+            <button type="button" class="refresh-captcha" (click)="refreshCaptcha()">↻</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="legal-text">
+        <p>Conformément à la loi 09-08, vous disposez d'un droit d'accès, de rectification et d'opposition au traitement de vos données à caractère personnel.</p>
+        <p>Ce traitement a été autorisé par la CNDP sous le n° A-PO-538/2021</p>
+        <p class="arabic-text">يجب تعبئة جميع خانات البيانات بصيغة صحيحة تحت طائلة رفض الطلب</p>
+      </div>
+
+      <div class="terms-section">
+        <label class="checkbox-container">
+          <input type="checkbox" [(ngModel)]="formData.acceptTerms" name="acceptTerms" required>
+          <span class="checkmark"></span>
+          J'ai lu et j'accepte <a href="#" class="link">les mentions légales</a> et <a href="#" class="link">les conditions générales d'utilisation</a>
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="back-btn" (click)="goBack()">Retour</button>
+        <button type="submit" class="submit-btn" [disabled]="!confirmationForm.form.valid">Suivant</button>
+      </div>
+    </form>
+  </div>
+</div>
+
