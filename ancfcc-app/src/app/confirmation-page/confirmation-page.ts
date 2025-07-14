@@ -36,8 +36,6 @@ export class ConfirmationPageComponent {
 
   refreshCaptcha() {
     console.log('Refreshing captcha');
-    // Implement captcha refresh logic
-    // Generate new captcha code
   }
 
   private isFormValid(): boolean {
