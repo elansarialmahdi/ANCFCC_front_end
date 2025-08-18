@@ -1,0 +1,267 @@
+.container {
+  height: 100vh;
+  background: url('../../assets/images/background.png') no-repeat center center;
+  background-size: cover;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin-top: -40px;
+  width: auto;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+
+.login-container {
+  max-width: 500px;
+  width: 100%;
+  background: rgba(212, 196, 168, 0.561);
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.472);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.login-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login-icon svg {
+  color: #333;
+  width: 50px;
+  height: 50px;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000cf;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  margin-top:  15px; ;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(74, 144, 164, 0.3);
+  background: rgba(255, 255, 255, 1);
+}
+
+.phone-input-container {
+  display: flex;
+  gap: 10px;
+}
+
+.area-code-input {
+  width: 80px;
+  border-radius: 8px;
+}
+
+.phone-number-input {
+  flex: 1;
+}
+
+.phone-verification {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  margin-top: 10px;
+}
+.verification-code-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-start;
+}
+
+.verification-code-input {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 22px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+  transition: border-color 0.3s;
+}
+
+.verification-code-input:focus {
+  border-color: #4a90a4;
+  outline: none;
+  background: rgba(255,255,255,1);
+}
+.phone-verification input[type="tel"] {
+  flex: 1;
+}
+
+.verify-btn {
+  background: #8b7355;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.verify-btn:hover {
+  background: #7a6449;
+}
+
+.login-btn {
+  background: #8b7355;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: #7a6449;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.signup-link {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.signup-link p {
+  color: #333;
+  font-size: 14px;
+  margin: 0;
+}
+
+.signup-link a {
+  color: #4a90a4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: #3d7a8a;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    margin: 0 10px;
+    padding: 30px 20px;
+  }
+  
+  .phone-verification {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .verify-btn {
+    width: 100%;
+  }
+}
+
+.verification-popup {
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.verification-popup-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 20px;
+  cursor: pointer;
+  background: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

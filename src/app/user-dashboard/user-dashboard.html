@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="sidebar">
+      <div class="user-info">
+        <img src="./assets/images/user-logo.png" alt="..." style="width: 100px; height: auto;" />
+        <p class="username">User name</p>
+      </div> 
+  
+      <button class="menu-button" routerLink="/info-per">
+        <span class="icon"><img src="../../assets/user.png" alt="Perso" width="20" /></span>
+        Information perso
+      </button>
+      <button class="menu-button" routerLink="/titre-foncier">
+        <span class="icon"><img src="../../assets/title.png" alt="Titre foncier" width="20" /></span>
+        Titre foncier
+      </button>
+      <button class="menu-button" routerLink="/user-dashboard">
+        <span class="icon"><img src="../../assets/order-history.png" alt="Historique" width="20" /></span>
+        Historique
+      </button>
+  
+      <button class="logout-button" (click)="logout()">
+        <span class="icon"><img src="../../assets/logout.png" alt="Déconnecte" width="20" /></span>
+        Déconnecte
+      </button>
+    </div>
+
+    <div class="images-container">
+      <div class="image-row">
+        <img src="./assets/images/ANCFCC 05.png" alt="..." class="small-img" />
+        <img src="./assets/images/ANCFCC 07.png" alt="..." class="small-img" />
+      </div>
+    </div>
+
+
+
+

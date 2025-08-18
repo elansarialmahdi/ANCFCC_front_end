@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="header">
+    <div class="logo-section">
+      <img src="./assets/ancfcc-logo.png" alt="ANCFCC Logo" class="logo">
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step active">1</div>
+    <div class="step-line"></div>
+    <div class="step">2</div>
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="goToConfirmation()" #signupForm="ngForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nom">Nom :</label>
+          <input type="text" id="nom" name="nom" [(ngModel)]="formData.nom" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="prenom">Prénom :</label>
+          <input type="text" id="prenom" name="prenom" [(ngModel)]="formData.prenom" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group half-width">
+          <label for="adresse">Adresse :</label>
+          <input type="text" id="adresse" name="adresse" [(ngModel)]="formData.adresse" required>
+        </div>
+        <div class="form-group half-width">
+          <label for="adresseAr" class="arabic-label">Prenom du père</label>
+          <input type="text" id="adresseAr" name="adresseAr" [(ngModel)]="formData.adresseAr" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="telephone">Numéro de téléphone</label>
+          <div class="phone-row">
+            <input type="tel" id="telephone" name="telephone" [(ngModel)]="formData.telephone" required>
+            <button type="button" class="verify-btn" (click)="verifyPhone()">Vérifier</button>
+            <input type="text" name="verificationCode" class="verification-code" placeholder="Code" [(ngModel)]="formData.verificationCode" required>
+             <div class="captcha">
+                 <img *ngIf="base64Image" [src]="base64Image" alt="captcha">
+             </div>
+            <button type="button" class="refresh-captcha" (click)="refreshCaptcha()">↻</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dateNaissance">Date de naissance :</label>
+          <div class="date-row">
+            <select id="jour" name="jour" [(ngModel)]="formData.jour" required>
+              <option value="">----</option>
+              <option *ngFor="let day of days" [value]="day">{{day}}</option>
+            </select>
+            <select id="mois" name="mois" [(ngModel)]="formData.mois" required>
+              <option value="">----</option>
+              <option *ngFor="let month of months" [value]="month.value">{{month.label}}</option>
+            </select>
+            <select id="annee" name="annee" [(ngModel)]="formData.annee" required>
+              <option value="">----</option>
+              <option *ngFor="let year of years" [value]="year">{{year}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cin">CIN :</label>
+          <input type="text" id="cin" name="cin" [(ngModel)]="formData.cin" required>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="submit-btn" (click)="validateCaptcha()" [disabled]="!signupForm.form.valid">Suivant</button>
+      </div>
+    </form>
+  </div>
+</div>
+

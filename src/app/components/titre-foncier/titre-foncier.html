@@ -1,0 +1,159 @@
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="user-info">
+      <img src="./assets/images/user-logo.png" alt="User" class="user-icon" />
+      <p class="username">User name</p>
+    </div>
+      <button class="menu-button" routerLink="/info-per">
+        <span class="icon"><img src="../../assets/user.png" alt="Perso" width="20" /></span>
+        Information perso
+      </button>
+      <button class="menu-button" routerLink="/titre-foncier">
+        <span class="icon"><img src="../../assets/title.png" alt="Titre foncier" width="20" /></span>
+        Titre foncier
+      </button>
+      <button class="menu-button" routerLink="/historique">
+        <span class="icon"><img src="../../assets/order-history.png" alt="Historique" width="20" /></span>
+        Historique
+      </button>
+  
+      <button class="logout-button" (click)="logout()">
+        <span class="icon"><img src="../../assets/logout.png" alt="Déconnecte" width="20" /></span>
+        Déconnecte
+      </button>
+    </div>
+  
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header-row">
+      <h2>Conservation Foncière</h2>
+      <button class="new-title-btn" (click)="openAddTitreModal()">
+        <span class="icon"><img src="../../../assets/add.png"width="18" /></span>Nouveau Titre
+      </button>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-value">2</div>
+        <div class="stat-label">Total Propriétés</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1</div>
+        <div class="stat-label">Actives</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1</div>
+        <div class="stat-label">Inactives</div>
+      </div>
+     
+    </div>
+    <div class="filters-row">
+      <input type="text" class="search-input" placeholder="Rechercher par adresse, titre..." />
+      <select class="filter-select">
+        <option>Tous les statuts</option>
+        <option>Actif</option>
+        <option>En location</option>
+        <option>Maintenance</option>
+      </select>
+      <select class="filter-select">
+        <option>Tous les types</option>
+        <option>Villa</option>
+        <option>Bureau</option>
+        <option>Terrain</option>
+      </select>
+      <select class="filter-select">
+        <option>Toutes les zones</option>
+        <option>Agdal</option>
+        <option>Hay Riad</option>
+        <option>Témara</option>
+      </select>
+    </div>
+    <div class="cards-row">
+      <!-- Card 1 -->
+      <div class="property-card">
+        <div class="property-header">
+          <span class="property-icon"><img src="../../../assets/architect.png" alt="Villa" width="32" /></span>
+          <span class="property-title">Titre Foncier 1</span>
+        </div>
+        <div class="property-location">
+          <span class="location-icon"></span>
+          Avenue Hassan II, Rabat
+        </div>
+        <span class="status actif">ACTIF</span>
+        <div class="property-info-row">
+          <div class="property-info">
+            <span class="info-icon"></span>
+            N° Titre <b>TF-2024-001</b>
+          </div>
+          <div class="property-info">
+            <span class="info-icon"></span>
+            Indice <b>2</b>
+          </div>
+          <div class="property-info">
+            <span class="info-icon"></span>
+            Indice special <b>A</b>
+          </div>
+        </div>
+       
+        <div class="property-update">Mis à jour le 08 Août 2025</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="property-card">
+        <div class="property-header">
+          <span class="property-icon"><img src="../../../assets/architect.png" alt="Bureau" width="32" /></span>
+          <span class="property-title">Titre Foncier 2</span>
+        </div>
+        <div class="property-location">
+          <span class="location-icon"></span>
+          Quartier Hay Riad, Rabat
+        </div>
+        <span class="status location">INACTIF</span>
+        <div class="property-info-row">
+          <div class="property-info">
+            <span class="info-icon"></span>
+            N° Titre <b>TF-2024-002</b>
+          </div>
+          <div class="property-info">
+            <span class="info-icon"></span>
+            Indice <b>1</b>
+          </div>
+          <div class="property-info">
+            <span class="info-icon"></span>
+            Indice special <b>B</b>
+          </div>
+        </div>
+       
+        <div class="property-update">Contrat expire: Mars 2026</div>
+      </div>
+      
+    </div>
+  <!-- Add this just before the closing </div> of .main-content -->
+<div id="addTitreModal" class="modal-overlay" [style.display]="showAddTitreModal ? 'flex' : 'none'">
+  <div class="modal-content">
+    <h3>Ajouter un Titre Foncier</h3>
+    <form (ngSubmit)="submitAddTitreForm()">
+      <label for="conservation">Conservation foncière:</label>
+      <input type="text" id="conservation" name="conservation" [(ngModel)]="newTitre.conservation" required />
+
+      <label for="numeroTitre">Numéro titre:</label>
+      <input type="text" id="numeroTitre" name="numeroTitre" [(ngModel)]="newTitre.numeroTitre" required />
+
+      <label for="indice">Indice:</label>
+      <input type="text" id="indice" name="indice" [(ngModel)]="newTitre.indice" required />
+
+      <label for="indiceSpecial">Indice spécial:</label>
+      <input type="text" id="indiceSpecial" name="indiceSpecial" [(ngModel)]="newTitre.indiceSpecial" />
+
+      <label for="captcha">Captcha: <span>{{ captchaQuestion }}</span></label>
+      <input type="text" id="captcha" name="captcha" [(ngModel)]="captchaInput" required />
+
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button type="button" class="btn btn-secondary" (click)="closeAddTitreModal()">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>

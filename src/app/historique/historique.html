@@ -1,0 +1,119 @@
+<div class="container">
+    <div class="sidebar">
+      <div class="user-info">
+        <img src="./assets/images/user-logo.png" alt="..." style="width: 100px; height: auto;" />
+        <p class="username">User name</p>
+      </div> 
+  
+      <button class="menu-button" routerLink="/info-per">
+        <span class="icon"><img src="../../assets/user.png" alt="Perso" width="20" /></span>
+        Information perso
+      </button>
+      <button class="menu-button" routerLink="/titre-foncier">
+        <span class="icon"><img src="../../assets/title.png" alt="Titre foncier" width="20" /></span>
+        Titre foncier
+      </button>
+      <button class="menu-button" routerLink="/user-dashboard">
+        <span class="icon"><img src="../../assets/order-history.png" alt="Historique" width="20" /></span>
+        Historique
+      </button>
+  
+   <div class="main-content">
+  <h2 class="history-title">Historique des Transactions</h2>
+  <p class="history-desc">Consultez l'historique complet de vos activités et transactions</p>
+  
+  <div class="history-filters">
+    <select class="filter-select">
+      <option>Toutes les actions</option>
+      <option>Ajout titre foncier</option>
+      <option>Modification info</option>
+      <option>Consultation titre</option>
+      <option>Modification adresse</option>
+    </select>
+    <select class="filter-select">
+      <option>Toute la période</option>
+      <option>Ce mois</option>
+      <option>Ce trimestre</option>
+      <option>Cette année</option>
+    </select>
+    <input type="text" class="filter-date" placeholder="dd/mm/yyyy" />
+    <input type="text" class="filter-date" placeholder="dd/mm/yyyy" />
+  </div>
+
+  <div class="history-list">
+    <!-- Card 1 -->
+    <div class="history-card card-green">
+      <div class="card-header">
+        <span class="card-icon card-icon-green">+</span>
+        <div>
+          <div class="card-title">Ajout d'un Titre Foncier</div>
+          <div class="card-subtitle">Nouveau titre foncier ajouté au système</div>
+        </div>
+        <div class="card-date">12 Août 2025 <span>14:32</span></div>
+      </div>
+      <div class="card-details">
+        <div>N° du Titre: <b>TF/RBT/2025/00156</b></div>
+        <div>Type: <b>Terrain urbain</b></div>
+        <div>Superficie: <b>250 m²</b></div>
+        <div>Statut: <span class="status-green">VALIDÉ</span></div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="history-card card-orange">
+      <div class="card-header">
+        <span class="card-icon card-icon-orange">&#9998;</span>
+        <div>
+          <div class="card-title">Modification Information Personnelle</div>
+          <div class="card-subtitle">Mise à jour des données personnelles</div>
+        </div>
+        <div class="card-date">11 Août 2025 <span>09:15</span></div>
+      </div>
+      <div class="card-details">
+        <div>Champ modifié: <b>Numéro de téléphone</b></div>
+        <div>Ancienne valeur: <b>+212 6XX XXX XXX</b></div>
+        <div>Nouvelle valeur: <b>+212 7XX XXX XXX</b></div>
+        <div>Statut: <span class="status-orange">CONFIRMÉ</span></div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="history-card card-blue">
+      <div class="card-header">
+        <span class="card-icon card-icon-blue">&#128196;</span>
+        <div>
+          <div class="card-title">Consultation Titre Foncier</div>
+          <div class="card-subtitle">Consultation des détails d'un titre foncier</div>
+        </div>
+        <div class="card-date">10 Août 2025 <span>16:45</span></div>
+      </div>
+      <div class="card-details">
+        <div>N° du Titre: <b>TF/RBT/2024/00892</b></div>
+        <div>Action: <b>Consultation complète</b></div>
+        <div>Durée: <b>5 min 32 sec</b></div>
+        <div>Statut: <span class="status-blue">TERMINÉ</span></div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="history-card card-orange">
+      <div class="card-header">
+        <span class="card-icon card-icon-orange">&#9998;</span>
+        <div>
+          <div class="card-title">Modification Adresse</div>
+          <div class="card-subtitle">Changement d'adresse de résidence</div>
+        </div>
+        <div class="card-date">09 Août 2025 <span>11:28</span></div>
+      </div>
+      <div class="card-details">
+        <div>Type: <b>Adresse principale</b></div>
+        <div>Nouvelle: <b>Avenue Mohammed V.</b></div>
+        <div>Code postal: <b>10000</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
