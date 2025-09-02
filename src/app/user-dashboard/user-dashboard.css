@@ -1,0 +1,127 @@
+.container {
+    height: 100vh;
+    background: url('../../assets/images/background.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    
+  }
+  
+  .sidebar {
+    background: #c7a67c78;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    
+    border-radius: 15px;
+    box-shadow: 0 0 8px #6c646489;
+  }
+  
+  .user-info {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .user-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fff;
+    min-height: 100vh;
+  }
+  
+  .username {
+    margin-top: -10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .menu-button {
+    background-color: #b8957087;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .menu-button::after {
+    content: "→";
+    float: right;
+  }
+  .icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+  .logout-button {
+    margin-top: auto;
+    background-color: #ab6f0ea4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    background-color: #e7e6e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .background-img {
+    padding: 3px;
+    width: 100%;
+    max-height: 100%;
+    min-height: 100vh;
+    background: url('../../assets/images/background.png') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+
+    
+  }
+  .images-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* espace entre les images */
+  padding: 20px;
+}
+
+.images-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* coins arrondis */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* ombre douce */
+}
+.image-row {
+  display: flex;
+  justify-content: center;   /* centre les images horizontalement */
+  align-items: center;       /* les aligne verticalement */
+  gap: 50px;                 /* espace entre les deux images */
+  margin-top: 10px;
+  padding-left: 200px;           /* optionnel : espace depuis le bord gauche */
+
+}
+
+
+.small-img {
+  width: 380px;
+  height: auto;
+  object-fit: contain;
+}
